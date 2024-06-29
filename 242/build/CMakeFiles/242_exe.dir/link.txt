@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/242_exe.dir/main.cpp.o -o 242_exe 

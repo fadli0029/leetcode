@@ -1,3 +1,0 @@
-/home/fade0329/leetcode/49/build/CMakeFiles/49_exe.dir
-/home/fade0329/leetcode/49/build/CMakeFiles/edit_cache.dir
-/home/fade0329/leetcode/49/build/CMakeFiles/rebuild_cache.dir

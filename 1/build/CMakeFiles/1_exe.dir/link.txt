@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/1_exe.dir/main.cpp.o CMakeFiles/1_exe.dir/helpers.cpp.o -o 1_exe 
