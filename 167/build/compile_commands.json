@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/fade0329/leetcode/167/build",
+  "command": "/usr/bin/c++   -std=c++20 -o CMakeFiles/167_exe.dir/main.cpp.o -c /home/fade0329/leetcode/167/main.cpp",
+  "file": "/home/fade0329/leetcode/167/main.cpp",
+  "output": "CMakeFiles/167_exe.dir/main.cpp.o"
+},
+{
+  "directory": "/home/fade0329/leetcode/167/build",
+  "command": "/usr/bin/c++   -std=c++20 -o CMakeFiles/167_exe.dir/helpers.cpp.o -c /home/fade0329/leetcode/167/helpers.cpp",
+  "file": "/home/fade0329/leetcode/167/helpers.cpp",
+  "output": "CMakeFiles/167_exe.dir/helpers.cpp.o"
+}
+]

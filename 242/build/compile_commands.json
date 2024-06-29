@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/fade0329/leetcode/242/build",
+  "command": "/usr/bin/c++   -std=c++20 -o CMakeFiles/242_exe.dir/main.cpp.o -c /home/fade0329/leetcode/242/main.cpp",
+  "file": "/home/fade0329/leetcode/242/main.cpp",
+  "output": "CMakeFiles/242_exe.dir/main.cpp.o"
+}
+]
