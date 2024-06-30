@@ -1,0 +1,30 @@
+In general, for any class, you'll ALWAYS need the following:
+
+1. Constructor
+2. Copy constructor, deep copy
+3. Copy constructor, transfer resource (does not perform deep copy)
+
+4. Destructor
+
+5. Assignment operator, deep copy
+6. Assignment operator, transfer resource (does not perform deep copy)
+
+For data structures, you ALWAYS need member functions from each of these categories:
+
+1. Capacity:
+   - empty()
+   - size()
+
+2. Element access:
+   - front()
+   - back()
+   note: some may use different implementations like operator[] to access elements, at() method, etc.
+
+3. Modifiers:
+   - insert()
+   - erase()
+
+And for each of those categories, each data structure may have extra member functions that other data structures do not have.
+
+
+
