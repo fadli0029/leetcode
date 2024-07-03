@@ -2,6 +2,16 @@
 #include "helpers.cpp"
 using namespace std;
 
+// Note to self:
+// When you visit other DP problems you have solved
+// or have not solved, I want you to remember what makes
+// DP challenging is the following: figuring out if a problem
+// can be solved by DP. Once you know that you can solved the problem
+// by DP, you pretty much have solved it.
+
+// The challenge of figuring out if a problem can be solved by DP is two:
+// 1. Figuring out what are the subproblems that will lead to solving the main problem. Do they even exist?
+// 2. Figuring out the base cases. Are they base case?
 class Solution {
 public:
     int climbStairs(int n) {
