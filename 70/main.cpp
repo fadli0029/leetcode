@@ -9,9 +9,13 @@ using namespace std;
 // can be solved by DP. Once you know that you can solved the problem
 // by DP, you pretty much have solved it.
 
-// The challenge of figuring out if a problem can be solved by DP is two:
+// The challenges of figuring out if a problem can be solved by DP are 3:
 // 1. Figuring out what are the subproblems that will lead to solving the main problem. Do they even exist?
 // 2. Figuring out the base cases. Are they base case?
+// 3. Figuring out the recursive formula for a general solution, i.e: the formula that takes the form
+//    of a bellman equation: V[i] = ... +/-* ... V[i+- something] (you see your dp table, denoted V here, on both sides
+//    of the equation). So, if you realize the problem can be formulated this way, then DP will solve
+//    the problem. Fibonacci is a good example of this.
 class Solution {
 public:
     int climbStairs(int n) {
