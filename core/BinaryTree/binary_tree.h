@@ -12,19 +12,33 @@ struct TreeNode {
     TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
 
-class BinarySearchTree {
+class BinaryTree {
     public:
-        BinarySearchTree();
-        ~BinarySearchTree();
+        BinaryTree();
+        ~BinaryTree();
 
         bool search(const int& query);
         void insert(int val);
         void remove(int val);
         void clear();
-        TreeNode* get_leftmost_node();
         unsigned int size() const;
 
-        void print();
+        // Traversal methods
+        // 1. DFS variants (all of these 3 are DFS)
+        void preorder();
+        void inorder();
+        void postorder();
+        // 2. BFS
+        void levelorder();
+
+        void invert();
+
+        int diameter() const;
+        int max_depth() const;
+        bool is_height_balanced() const;
+
+        bool is_same_tree(TreeNode* other_root) const;
+        bool is_subtree(TreeNode* other_root) const;
 
     private:
         TreeNode* root;

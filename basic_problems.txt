@@ -1,1 +1,6 @@
-1. longest substring, see: https://superstudy.guide/algorithms-data-structures/data-structures/arrays-strings#longest-substring
+1. Longest substring, see: https://superstudy.guide/algorithms-data-structures/data-structures/arrays-strings#longest-substring
+2. Number of islands, see: https://superstudy.guide/algorithms-data-structures/graphs-trees/graphs#number-of-islands
+3. Robot room cleaner, see: https://superstudy.guide/algorithms-data-structures/graphs-trees/graphs#robot-room-cleaner
+4. K-smallest elements, see: https://superstudy.guide/algorithms-data-structures/graphs-trees/trees#k-smallest-elements
+5. Searching for a word starting with a given prefix, see: https://superstudy.guide/algorithms-data-structures/graphs-trees/trees#trie and https://leetcode.com/problems/counting-words-with-a-given-prefix/description/
+6. Kadane's algorithm, see: https://superstudy.guide/algorithms-data-structures/data-structures/arrays-strings#kadane-algorithm
