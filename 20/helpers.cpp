@@ -4,6 +4,7 @@
 #include <map>
 #include <list>
 #include <set>
+#include <stack>
 #include <array>
 #include <deque>
 #include <forward_list>
@@ -46,6 +47,14 @@ void printAssociative(Iter begin, Iter end) {
 template <typename T>
 void printVector(const std::vector<T>& vec) {
     printSequence(vec.begin(), vec.end());
+}
+
+template <typename T>
+void printStack(std::stack<T> st) {
+    while (!st.empty()) {
+        std::cout << st.top() << std::endl;
+        st.pop();
+    }
 }
 
 template <typename T, std::size_t N>
@@ -106,4 +115,26 @@ void printUnorderedMap(const std::unordered_map<K, V>& um) {
 template <typename K, typename V>
 void printUnorderedMultiMap(const std::unordered_multimap<K, V>& umm) {
     printAssociative(umm.begin(), umm.end());
+}
+
+template <typename T>
+void printMatrix(const std::vector<std::vector<T>>& matrix) {
+    std::cout << "[";
+    for (size_t i = 0; i < matrix.size(); ++i) {
+        if (i > 0) {
+            std::cout << " ";
+        }
+        std::cout << "[";
+        for (size_t j = 0; j < matrix[i].size(); ++j) {
+            std::cout << matrix[i][j];
+            if (j != matrix[i].size() - 1) {
+                std::cout << ", ";
+            }
+        }
+        std::cout << "]";
+        if (i != matrix.size() - 1) {
+            std::cout << std::endl;
+        }
+    }
+    std::cout << "]" << std::endl;
 }

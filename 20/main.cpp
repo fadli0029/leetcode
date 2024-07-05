@@ -5,38 +5,41 @@ using namespace std;
 class Solution {
 public:
     bool isValid(string s) {
-        stack<char> paren_stack;
+        if (s.size() == 1) {
+            return false;
+        }
+        unordered_map<char, char> valids =
+        {
+          {'}', '{'},
+          {')', '('},
+          {']', '['},
+        };
 
-        unordered_map<char, char> data;
-        data.insert(pair<char, char>(')', '('));
-        data.insert(pair<char, char>('}', '{'));
-        data.insert(pair<char, char>(']', '['));
-
-        for (const auto& ch : s) {
-            if (data.find(ch)!=data.end()) {
-                if (paren_stack.empty()) {
+        stack<char> st;
+        for (const auto& c : s) {
+            if (valids.find(c) != valids.end()) {
+                if (st.empty()) {
                     return false;
                 }
                 else {
-                    char top = paren_stack.top();
-                    if (top == data[ch]) {
-                        paren_stack.pop();
-                    }
-                    else {
+                    if (st.top() != valids[c]) {
                         return false;
                     }
+                    st.pop();
                 }
             }
             else {
-                paren_stack.push(ch);
+                st.push(c);
             }
         }
-        return paren_stack.empty();
+        return st.empty();
     }
 };
 
 int main() {
     Solution sol;
+    string s = ")(){}";
+    cout << sol.isValid(s) << endl;
     return 0;
 }
 
