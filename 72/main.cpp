@@ -6,7 +6,9 @@ class Solution {
 public:
     int minDistance(string word1, string word2) {
         // I think Algorithms by Dasgupta et. al., chapter
-        // 6.3 has the best explanation on this.
+        // 6.3 has the best explanation on this. I pad
+        // the dp matrix so that it's the same figure 6.4(b)
+        // in the textbook.
         int m = word1.size();
         int n = word2.size();
         vector<vector<int>> dp(m+1, vector<int>(n+1, 0));
