@@ -1,17 +1,16 @@
 #include "bits/stdc++.h"
+#include "helpers.cpp"
+#include <vector>
 using namespace std;
 
 class Solution {
-public:
-    bool containsDuplicate(vector<int>& nums) {
-        set<int> s;
-        for (const auto& num : nums) {
-            if (s.contains(num)) {
+  public:
+    bool containsDuplicate(vector<int> &nums) {
+        unordered_map<int, int> count;
+        for (const auto &num : nums) {
+            count[num]++;
+            if (count[num] >= 2)
                 return true;
-            }
-            else {
-                s.insert(num);
-            }
         }
         return false;
     }
@@ -19,8 +18,7 @@ public:
 
 int main() {
     Solution sol;
-    vector<int> test = {1,1,1,3,3,4,3,2,4,2};
-    cout << sol.containsDuplicate(test) << endl;
+    vector<int> nums = {1, 2, 3, 1};
+    sol.containsDuplicate(nums);
     return 0;
 }
-
