@@ -3,43 +3,33 @@
 using namespace std;
 
 class Solution {
-public:
+  public:
     bool isValid(string s) {
-        if (s.size() == 1) {
-            return false;
-        }
-        unordered_map<char, char> valids =
-        {
-          {'}', '{'},
-          {')', '('},
-          {']', '['},
+        unordered_map<char, char> validate = {
+            {'}', '{'},
+            {')', '('},
+            {']', '['},
         };
 
         stack<char> st;
-        for (const auto& c : s) {
-            if (valids.find(c) != valids.end()) {
-                if (st.empty()) {
+        for (const auto &c : s) {
+            if (validate.contains(c)) {
+                if (st.empty())
+                    return false; // first item is closing bracket
+                if (st.top() != validate[c]) {
                     return false;
-                }
-                else {
-                    if (st.top() != valids[c]) {
-                        return false;
-                    }
+                } else {
                     st.pop();
                 }
-            }
-            else {
+            } else {
                 st.push(c);
             }
         }
-        return st.empty();
+        return st.empty() ? true : false;
     }
 };
 
 int main() {
     Solution sol;
-    string s = ")(){}";
-    cout << sol.isValid(s) << endl;
     return 0;
 }
-

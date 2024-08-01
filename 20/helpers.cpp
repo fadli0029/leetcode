@@ -4,7 +4,6 @@
 #include <map>
 #include <list>
 #include <set>
-#include <stack>
 #include <array>
 #include <deque>
 #include <forward_list>
@@ -47,14 +46,6 @@ void printAssociative(Iter begin, Iter end) {
 template <typename T>
 void printVector(const std::vector<T>& vec) {
     printSequence(vec.begin(), vec.end());
-}
-
-template <typename T>
-void printStack(std::stack<T> st) {
-    while (!st.empty()) {
-        std::cout << st.top() << std::endl;
-        st.pop();
-    }
 }
 
 template <typename T, std::size_t N>

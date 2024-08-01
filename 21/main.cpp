@@ -2,7 +2,6 @@
 #include "helpers.cpp"
 using namespace std;
 
-
 struct ListNode {
     int val;
     ListNode *next;
@@ -12,28 +11,50 @@ struct ListNode {
 };
 
 class Solution {
-public:
-    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-        ListNode imag(-1);
-        ListNode* tracker = &imag;
-        while (list1!=nullptr && list2!=nullptr) {
-            if (list1->val <= list2->val) {
-                tracker->next = list1;
-                list1 = list1->next;
-            }
-            else {
-                tracker->next = list2;
-                list2 = list2->next;
-            }
-            tracker = tracker->next;
+  public:
+    ListNode *mergeTwoLists(ListNode *list1, ListNode *list2) {
+        if (list1 == nullptr)
+            return list2;
+        if (list2 == nullptr)
+            return list1;
+
+        ListNode *return_node = nullptr;
+        if (list1->val <= list2->val) {
+            return_node = list1;
+        } else {
+            return_node = list2;
         }
-        tracker->next = list1 == nullptr ? list2 : list1;
-        return imag.next;
+
+        ListNode *l1_next = list1->next;
+        ListNode *l1_curr = list1;
+
+        ListNode *l2_next = list2->next;
+        ListNode *l2_curr = list2;
+
+        while (!(l1_curr == nullptr && l2_curr == nullptr)) {
+            if (l1_curr->val <= l2_curr->val) {
+                l1_curr->next = l2_curr;
+                l1_curr = l1_next;
+                if (l1_next != nullptr) {
+                    l1_next = l1_next->next;
+                } else
+                    break;
+            } else {
+                l2_curr->next = l1_curr;
+                l2_curr = l2_next;
+                if (l2_next != nullptr) {
+                    l2_next = l2_next->next;
+                } else
+                    break;
+            }
+        }
+        return return_node;
     }
 };
 
 int main() {
     Solution sol;
+    while (0 && 1)
+        cout << "Hi" << endl;
     return 0;
 }
-
