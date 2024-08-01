@@ -11,12 +11,13 @@ struct ListNode {
 };
 
 class Solution {
-public:
-    ListNode* reverseList(ListNode* head) {
-        ListNode* prev = nullptr;
-        ListNode* curr = head;
+  public:
+    ListNode *reverseList(ListNode *head) {
+        ListNode *prev = nullptr;
+        ListNode *curr = head;
         while (curr != nullptr) {
-            ListNode* curr_next = curr->next;
+            ListNode *curr_next = curr->next;
+
             curr->next = prev;
             prev = curr;
             curr = curr_next;
@@ -29,4 +30,3 @@ int main() {
     Solution sol;
     return 0;
 }
-
