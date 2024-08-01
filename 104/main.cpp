@@ -13,74 +13,18 @@ struct TreeNode {
 
 class Solution {
 public:
-    // A function that does dfs and then recursively call this function
-    // is implicity ly applying stack LIFO property. This is due to
-    // the fact that we recursively call the function implicitly
-    // which means we are leveraging the stack data structure.
-    // But, for checking understanding, ill implement both using stack.
-    // and recursion.
-
-    // Stack implementation:
-    // int maxDepth(TreeNode* root) {
-    //     if (root == nullptr) {
-    //         return 0;
-    //     }
-
-    //     // Next nodes to potentially visit, track with a stack s.
-    //     stack<pair<TreeNode*, int>> s;
-
-    //     // Set of visited nodes, track with a hash set h.
-    //     // You can't store int type (i.e.: the data type of
-    //     // the TreeNode) bcoz what if multiple nodes have
-    //     // same data (this can happen in general binary tree,
-    //     // but not in binary search tree which doesn't allow duplicate).
-    //     unordered_set<TreeNode*> h;
-
-    //     // traverse until stack is empty
-    //     s.push({root, 1});
-    //     int max_depth = 0;
-    //     while (!s.empty()) {
-    //         // access and then pop (remove) the top element in the stack.
-    //         pair<TreeNode*, int> curr_node_ptr_and_depth = s.top();
-    //         s.pop();
-    //         TreeNode* curr_node_ptr = curr_node_ptr_and_depth.first;
-    //         int curr_depth = curr_node_ptr_and_depth.second;
-
-    //         if (!h.contains(curr_node_ptr)) {
-    //             h.insert(curr_node_ptr);
-    //             max_depth = max(max_depth, curr_depth);
-
-    //             // Iterate the neighbors via pre-order traversal policy:
-    //             //            = traverse left-subtree first
-    //             // i.e.: due to the nature of a stack data structure, to
-    //             //       do this, we push right child first so that left
-    //             //       child is processed first.
-    //             if (curr_node_ptr->right != nullptr && !h.contains(curr_node_ptr->right)) {
-    //                 s.push({curr_node_ptr->right, curr_depth+1});
-    //             }
-    //             if (curr_node_ptr->left != nullptr && !h.contains(curr_node_ptr->left)) {
-    //                 s.push({curr_node_ptr->left, curr_depth+1});
-    //             }
-
-    //         }
-    //     }
-    //     return max_depth;
-    // }
-
-    // Recursive implementation:
     int maxDepth(TreeNode* root) {
-        return dfs(root);
+      // max depth of BT = height of root of BT
+      return dfs(root);
     }
 
     int dfs(TreeNode* node) {
-        if (node == nullptr) {
-            return 0;
-        }
+      if (node==nullptr) return 0;
 
-        int left_subtree_depth  = dfs(node->left);
-        int right_subtree_depth = dfs(node->right);
+      int left_subtree_depth = dfs(node->left);
+      int right_subtree_depth = dfs(node->right);
 
-        return max(left_subtree_depth, right_subtree_depth) + 1;
+      return max(left_subtree_depth, right_subtree_depth) + 1;
     }
 };
 
